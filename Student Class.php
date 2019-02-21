@@ -66,13 +66,21 @@
 						</div>
 					</div>
 				</nav>
-				
+			 <div class="container">
+		 <form method="POST" action="pocessSC.php">
+		     <center>
+					<td><b>Student_ID:</b><br/><input type="text"  name="Student_ID" required></td><br/>
+					<td><b>Class_ID:</b><br/><input type="text" name="Class_ID" required></td><br/>
+<br>					
+<div class="container">
+<button class="btn btn-info" href="SCread.php" type="submit" name="add">SAVE</button> 
+
+</div>
+</center>
+</form>
+         
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
-	
-</body>
-</html>
-
-
+	</div>

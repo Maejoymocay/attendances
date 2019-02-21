@@ -4,12 +4,12 @@
     $search = $_POST['search'];
 		// search in all table columns
 		// using concat mysql function
-		$query = "SELECT * FROM `class` WHERE CONCAT(`Class_ID`, `Section`, `Subject_Code`, `Semester` , `Academic_Year` , `Schedule_Day` , `Schedule_Time` ) LIKE '%".$search."%'";
+		$query = "SELECT * FROM `subject` WHERE CONCAT(`Student_ID`, `	Class_ID`) LIKE '%".$search."%'";
 		$search_result = filterTable($query);
     
 	}
 	else {
-		$query = "SELECT * FROM `class`";
+		$query = "SELECT * FROM `student_class`";
 		$search_result = filterTable($query);
 	}
 
@@ -44,32 +44,24 @@
 						<table class="table table-hover table-dark">
 						<thead>
 							<tr>
-							<th>Class ID</th>
-							<th>Section</th>
-							<th>Subject Code</th>
-							<th>Semester</th>
-							<th>Academic Year</th>
-							<th>Schedule Day</th>
-							<th>Schedule Time</th>
+							<th>Student_ID</th>
+							<th>Class_ID</th>
 							</tr>
 				  </thead>
 					<?php while($row = mysqli_fetch_array($search_result)):?>
 						<tbody>
 						<tr>
+							<td><?php echo $row['Student_ID'];?></td>
 							<td><?php echo $row['Class_ID'];?></td>
-							<td><?php echo $row['Section'];?></td>
-							<td><?php echo $row['Subject_Code'];?></td>
-							<td><?php echo $row['Semester'];?></td>
-							<td><?php echo $row['Academic_Year'];?></td>
-							<td><?php echo $row['Schedule_Day'];?></td>
-							<td><?php echo $row['Schedule_Time'];?></td>
 							<td>
 								<div class="btn-group">
 								<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								
 								</button>
-									<a class="dropdown-item" href="update class.php?edit=<?php echo $row['Class_ID']; ?>">Edit</a>
-									<a href="delete class.php?Class_ID=<?php echo $row["Class_ID"]; ?>"><button type="submit"class="btn btn-info"  onclick="return confirm('Are you sure?');" >Delete</button></a>
+								  <div class="dropdown-menu">
+									<a  data-toggle="modal" data-target="#exampleModalCenter1" class="dropdown-item">Add Student</a>
+									<a class="dropdown-item" href="updateSC.php?edit=<?php echo $row['Student_ID']; ?>">Edit</a>
+									<a href="deleteSC.php?Student_ID=<?php echo $row["Student_ID"]; ?>"><button type="submit"class="btn btn-info"  onclick="return confirm('Are you sure?');" >Delete</button></a>
 								  </div>
 								</div>
 							</td>
