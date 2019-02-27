@@ -16,11 +16,6 @@
 		$mysqli->query("INSERT INTO subject (Subject_Code, Subject_Title) VALUES('$Subject_Code', '$Subject_Title')") or die($mysqli->error);
 		header("location: subject read.php");
 	}
-	if (isset($_GET['delete'])) {
-		$Subject_Code = $_GET['delete'];
-		$mysqli->query("DELETE FROM subject WHERE Subject_Code=$Subject_Code") or die($mysqli->error());
-		header("location: subject read.php");
-	}
 	if (isset($_POST['add'])) {
 		$Subject_Code = $_POST['Subject_Code'];
 		$Subject_Title = $_POST['Subject_Title'];

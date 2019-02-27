@@ -51,7 +51,7 @@
 														if ($update == true):
 														echo "<script>$('#exampleModalCenter2').modal('show');</script>";
 													?>
-														<input class="btn btn-danger btn-block button2" type="submit" name="update" value="Update" onclick="return confirm('Are you sure?');">
+														<input class="btn btn-danger btn-block button2" type="submit" name="update" value="update" onclick="return confirm('Are you sure?');">
 													<?php else: ?>
 														<input class="btn btn-danger btn-block button2" type="submit" name="submit" value="Save" onclick="return confirm('Are you sure?');">
 													<?php endif; ?>

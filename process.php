@@ -23,11 +23,6 @@
 		$mysqli->query("INSERT INTO student (Student_ID, First_Name, Last_Name, Middle_Initial, Name_Extension) VALUES('$Student_ID', '$First_Name', '$Last_Name', '$Middle_Initial', '$Name_Extention')") or die($mysqli->error);
 		header("location: Read.php");
 	}
-	if (isset($_GET['delete'])) {
-		$Student_ID = $_GET['delete'];
-		$mysqli->query("DELETE FROM student WHERE Student_ID=$Student_ID") or die($mysqli->error());
-		header("location: read.php");
-	}
 	if (isset($_POST['add'])) {
 		$Student_ID = $_POST['Student_ID'];
 		$First_Name = $_POST['First_Name'];

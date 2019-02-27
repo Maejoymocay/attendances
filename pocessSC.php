@@ -34,7 +34,7 @@
 	}
 	if (isset($_POST['update'])) {
 		$Student_ID = $_POST['Student_ID'];
-		$Class_ID= $_POST['Class_ID'];
+		$Class_ID = $_POST['Class_ID'];
 
 		
 		$mysqli->query("UPDATE student_class SET Student_ID='$Student_ID', Class_ID='$Class_ID' WHERE Student_ID=$Student_ID") or die($mysqli->error);

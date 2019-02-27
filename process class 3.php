@@ -26,11 +26,6 @@
 		$mysqli->query("INSERT INTO class (Class_ID, Section, Subject_Code, Semester, Academic_Year, Schedule_Day, Schedule_Time ) VALUES('$Class_ID', '$Section', '$Subject_Code', '$Semester', '$Academic_Year', '$Schedule_Day', '$Schedule_Time')") or die($mysqli->error);
 		header("location: read class.php");
 	}
-	if (isset($_GET['delete'])) {
-		$Class_ID = $_GET['delete'];
-		$mysqli->query("DELETE FROM class WHERE Class_ID=$Class_ID") or die($mysqli->error());
-		header("location: read Class.php");
-	}
 	if (isset($_POST['add'])) {
 		$Class_ID = $_POST['Class_ID'];
 		$Section = $_POST['Section'];
