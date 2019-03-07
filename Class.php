@@ -1,3 +1,26 @@
+<?php
+	if(isset($_POST['btn_search']))
+	{
+    $search = $_POST['search'];
+		// search in all table columns
+		// using concat mysql function
+		$query = "SELECT * FROM `class` WHERE CONCAT(`Class_ID`, `Section`, `Subject_Code`, `Semester` , `Academic_Year` , `Schedule_Day`, `Schedule_Time`) LIKE '%".$search."%'";
+		$search_result = filterTable($query);
+    
+	}
+	else {
+		$query = "SELECT * FROM `Class`";
+		$search_result = filterTable($query);
+	}
+
+	// function to connect and execute the query
+	function filterTable($query)
+	{
+		$connect = mysqli_connect("localhost", "root", "", "attendance");
+		$filter_Result = mysqli_query($connect, $query);
+		return $filter_Result;
+	}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,79 +39,31 @@
 </head>
 
 <body>
-
-    <div id="wrapper">
+			                             <?php require_once 'process class 3.php'; ?>
+											<form action="process class 3.php" method="post">
+												<input type="hidden" name="Class_ID" value="<?php echo $Class_ID; ?>">
+												<label class="col-form-label">Section:</label>
+												<input type="text" class="form-control form-control-sm" name="Section" placeholder="Section" value="<?php echo $Section; ?>" required>
+												<label class="col-form-label">Subject Code:</label>
+												<input type="text" class="form-control form-control-sm" name="Subject_Code" placeholder="Subject_Code" value="<?php echo $Subject_Code; ?>" required>
+												<label class="col-form-label">Semester:</label>
+												<input type="text" class="form-control form-control-sm" name="Semester" placeholder="Semester" value="<?php echo $Semester; ?>" required>
+												<label class="col-form-label">Academic Year:</label>
+												<input type="text" class="form-control form-control-sm" name="Academic_Year" placeholder="Academic_Year" value="<?php echo $Academic_Year; ?>" required>
+												<label class="col-form-label">Schedule Day:</label>
+												<input type="text" class="form-control form-control-sm" name="Schedule_Day" placeholder="Schedule_Day" value="<?php echo $Schedule_Day; ?>" required>
+												<label class="col-form-label">Schedule Time:</label>
+												<input type="text" class="form-control form-control-sm" name="Schedule_Time" placeholder="Schedule_Time" value="<?php echo $Schedule_Time; ?>" required>
+												 <?php
+														if ($update == true):
 		
-		<!-- Sidebar -->
-				<div id="sidebar-wrapper">
-			<ul class="sidebar-nav">
-				<li class="sidebar-brand">
-					<img src="images/icon.png" />
-
-				</li>
-				<br>
-				<li>
-					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
-				</li>
-				<li>
-					<a href="Class.php" title="Class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
-				</li>
-				<li>
-					<a href="Student.php" title="Student"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
-				</li>
-				<li>
-					<a href="Student Class.php" title="Student Class"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
-				</li>
-				<li>
-					<a href="Subject.Php" title="Subject"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
-				</li>
-				<li>
-					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
-				</li>
-			</ul>
-		</div>
-	
-	
-		<!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-				
-				<!-- Navigation-->
-				<nav class="navbar navbar-green">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>                        
-							</button>
-							<a class="navbar-brand" onclick="openNav()"><span  class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Create Attendance</a>
-						</div>
-					</div>
-				</nav>
-			<br>
-		<br>
-	<br>		
-	 <body>
-           <center>
-     <div class="container">
-		 <form method="POST" action="process class 3.php">
-		     <center>
-					<td><b>	Class_ID:</b><br/><input type="text"  name="Class_ID" required></td><br/>
-					<td><b>Section:</b><br/><input type="text" name="Section" required></td><br/>
-					<td><b>Subject_Code:</b><br/><input type="text"  name="Subject_Code" required></td><br/>
-					<td><b>Semester:</b><br/><input type="text" name="Semester" required></td><br/>
-					<td><b>Academic_Year:</b><br/><input type="text"  name="Academic_Year" required></td><br/>
-					<td><b>Schedule_Day:</b><br/><input type="text" name="Schedule_Day" required></td><br/>
-					<td><b>Schedule_Time:</b><br/><input type="text"  name="Schedule_Time" required></td><br/>
-<br>					
-<div class="container">
-<button class="btn btn-info" href="read class.php" type="submit" name="add">SAVE</button> 
-
-</div>
-</center>
-</form>
-				
+													?>
+														<input class="btn btn-danger btn-block button2" type="submit" name="update" value="update" onclick="return confirm('Are you sure?');">
+													<?php else: ?>
+														<input class="btn btn-danger btn-block button2" type="submit" name="submit" value="Save" onclick="return confirm('Are you sure?');">
+													<?php endif; ?>
+											</form>
+		
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

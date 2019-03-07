@@ -39,7 +39,6 @@
 </head>
 
 <body>
-<div class="modal-body">
 			                             <?php require_once 'process class 3.php'; ?>
 											<form action="process class 3.php" method="post">
 												<input type="hidden" name="Class_ID" value="<?php echo $Class_ID; ?>">
@@ -59,14 +58,14 @@
 												<input type="text" class="form-control form-control-sm" name="Schedule_Time" placeholder="Schedule_Time" value="<?php echo $Schedule_Time; ?>" required>
 												 <?php
 														if ($update == true):
-														echo "<script>$('#exampleModalCenter2').modal('show');</script>";
+		
 													?>
 														<input class="btn btn-danger btn-block button2" type="submit" name="update" value="Update" onclick="return confirm('Are you sure?');">
 													<?php else: ?>
 														<input class="btn btn-danger btn-block button2" type="submit" name="submit" value="Save" onclick="return confirm('Are you sure?');">
 													<?php endif; ?>
 											</form>
-										</div>
+		
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
