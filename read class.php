@@ -38,9 +38,58 @@
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
-
 <body>
-<div class="table-responsive">
+
+    <div id="wrapper">
+		
+		<!-- Sidebar -->
+				<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<img src="images/icon.png" />
+
+				</li>
+				<br>
+                  <li>
+					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+				</li>
+				<li>
+					<a href="read class.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
+				</li>
+				<li>
+					<a href="read.php" title="read"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
+				</li>
+				<li>
+					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
+				</li>
+				<li>
+					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+				</li>
+				<li>
+					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+				</li>
+			</ul>
+		</div>
+		<!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<!-- Navigation-->
+				<nav class="navbar navbar-green">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>                        
+							</button>
+							<a class="navbar-brand" onclick="openNav()"><span  class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Attendance</a>
+						</div>
+					</div>
+				</nav>
+			     <br>
+					<br>
+					<a href="class.php"class="btn btn-primary">Add Student</a>	
+					 <div class="modal-body">
 						<table class="table table-hover table-dark">
 						<thead>
 							<tr>
@@ -64,11 +113,8 @@
 							<td><?php echo $row['Schedule_Day'];?></td>
 							<td><?php echo $row['Schedule_Time'];?></td>
 							<td>
-								<div class="btn-group">
-								<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								
-								</button>
-									<a class="dropdown-item" href="update class.php?edit=<?php echo $row['Class_ID']; ?>">Edit</a>
+						<div class>
+									<a class="btn btn-primary" href="update class.php?edit=<?php echo $row['Class_ID']; ?>">Edit</a>
 									<a href="delete class.php?Class_ID=<?php echo $row["Class_ID"]; ?>"><button type="submit"class="btn btn-info"  onclick="return confirm('Are you sure?');" >Delete</button></a>
 								  </div>
 								</div>
@@ -76,12 +122,10 @@
 						</tr>
 						</tbody>
 					<?php endwhile;?>
-				</table>
-         
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
-	</div>
-   </body>
-</html>
+						   </table>
+								<!-- Bootstrap core JavaScript -->
+								<script src="vendor/jquery/jquery.min.js"></script>
+								<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+					        </div>
+							   </body>
+							</html>

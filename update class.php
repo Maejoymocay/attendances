@@ -38,15 +38,21 @@
 	<script src="js/attendance.js"></script>
 </head>
 
-<body>
-			                             <?php require_once 'process class 3.php'; ?>
-											<form action="process class 3.php" method="post">
+<div class="container-fluid">
+			                      <?php require_once 'process class 3.php'; ?>
+									
+									<div class = "row">
+									<div class="col-sm-4">
+									</div>
+								
+									<div class="col-sm-4">
+									   <form action="process class 3.php" method="post">
+									       <br>
+										   <input type="hidden" name="Class_ID" value="<?php echo $Class_ID?>">
 												<input type="hidden" name="Class_ID" value="<?php echo $Class_ID; ?>">
-												<label class="col-form-label">Class ID:</label>
-												<input type="text" class="form-control form-control-sm" name="Class_ID" placeholder="Class_ID" value="<?php echo $Class_ID; ?>" required>
 												<label class="col-form-label">Section:</label>
 												<input type="text" class="form-control form-control-sm" name="Section" placeholder="Section" value="<?php echo $Section; ?>" required>
-												<label class="col-form-label">Subject Code:</label>
+												<label class="col-form-label">Subject code:</label>
 												<input type="text" class="form-control form-control-sm" name="Subject_Code" placeholder="Subject_Code" value="<?php echo $Subject_Code; ?>" required>
 												<label class="col-form-label">Semester:</label>
 												<input type="text" class="form-control form-control-sm" name="Semester" placeholder="Semester" value="<?php echo $Semester; ?>" required>
@@ -55,17 +61,20 @@
 												<label class="col-form-label">Schedule Day:</label>
 												<input type="text" class="form-control form-control-sm" name="Schedule_Day" placeholder="Schedule_Day" value="<?php echo $Schedule_Day; ?>" required>
 												<label class="col-form-label">Schedule Time:</label>
-												<input type="text" class="form-control form-control-sm" name="Schedule_Time" placeholder="Schedule_Time" value="<?php echo $Schedule_Time; ?>" required>
+												<input type="text" class="form-control form-control-sm" name="Schedule_Time" placeholder="Schedule_Time" value="<?php echo $Schedule_Time; ?>" required><br/><br/>
 												 <?php
 														if ($update == true):
-		
+														echo "<script>$('#exampleModalCenter2').modal('show');</script>";
 													?>
 														<input class="btn btn-danger btn-block button2" type="submit" name="update" value="Update" onclick="return confirm('Are you sure?');">
 													<?php else: ?>
 														<input class="btn btn-danger btn-block button2" type="submit" name="submit" value="Save" onclick="return confirm('Are you sure?');">
 													<?php endif; ?>
-											</form>
-		
+										</form>
+									</div>
+									</div>
+					</div>
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

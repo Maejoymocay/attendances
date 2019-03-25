@@ -30,26 +30,23 @@
 					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
 				</li>
 				<li>
-					<a href="Class.php" title="Class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
+					<a href="read class.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
 				</li>
 				<li>
-					<a href="Student.php" title="Student"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
+					<a href="read.php" title="read"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
 				</li>
 				<li>
-					<a href="Student Class.php" title="Student Class"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
+					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
 				</li>
 				<li>
-					<a href="Subject.Php" title="Subject"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
 				</li>
 				<li>
 					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
 				</li>
 			</ul>
 		</div>
-	
-
-	
-		<!-- Page Content -->
+			<!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
 				
@@ -63,31 +60,28 @@
 								<span class="icon-bar"></span>                        
 							</button>
 							<a class="navbar-brand" onclick="openNav()"><span  class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Class Attendance</a>
-						</div>
-					
 					</div>
 				</nav>
-				   
- <div class="container">
-     <header class="jumbotron my-4">
-        <h1 class="display-3">Class Attendance</h1>
-        <p class="lead">With My Contacts you will always have a secure backup of your contact list -<br> priceless if you lose or switch your phone!</p>
-      </header>
-	     <br>
-    <<center><a href="Class.php" class="btn btn-primary">Let's Get Started!</a></center><br><br>
-</div>
-	
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
-<br>
-    <br>	
-	 <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-	
-</body>
-</html>
+                    <div class="container">
+							 <header class="jumbotron my-4">
+								<h1 class="display-3">Class Attendance</h1>
+								<p class="lead">Early is on time<br> on time is late.<br> and late is unnaceptable!</p>
+								<center>
+								<a href="class.php" class="btn btn-primary">class</a>
+								<a href="Student.php" class="btn btn-primary">Add student</a>
+								<a href="Student Class.php" class="btn btn-primary"> Add student class</a>
+								<a href="subject.php" class="btn btn-primary">Add subject</a>
+								</center>
+							  </header>
+				</div>
+					<!-- Bootstrap core JavaScript -->
+					<script src="vendor/jquery/jquery.min.js"></script>
+					<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+				  <br>
+					<br>	
+					 <footer class="py-5 bg-dark">
+					  <div class="container">
+						<p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+					  </div>
+				</body>
+				</html>

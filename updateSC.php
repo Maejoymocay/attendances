@@ -24,7 +24,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Classroom Attendance</title>
     <meta charset="utf-8">
@@ -37,10 +36,13 @@
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
-
 <body>
-<div class="modal-body">
+                          <div class="container-fluid">
+	  
 			                             <?php require_once 'pocessSC.php'; ?>
+									<div class = "row">
+									<div class="col-sm-4">
+									</div>
 											<form action="pocessSC.php" method="post">
 												<input type="hidden" name="Student_ID" value="<?php echo $Student_ID; ?>">
 												<label class="col-form-label">Student_ID:</label>
@@ -57,6 +59,7 @@
 													<?php endif; ?>
 											</form>
 										</div>
+									</div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

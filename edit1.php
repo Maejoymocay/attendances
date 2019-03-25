@@ -36,12 +36,18 @@
 	<script src="bootstrap-3.3.7/js/jquery.min.js"></script>
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
-</head>
-
-<body>
-<div class="modal-body">
-			                             <?php require_once 'process.php'; ?>
-											<form action="process.php" method="post">
+          </head>
+               <body>
+                    <div class="container-fluid">
+			                      <?php require_once 'process.php'; ?>
+									
+									<div class = "row">
+									<div class="col-sm-4">
+									</div>
+								
+									<div class="col-sm-4">
+									   <form action="process.php" method="post">
+									       <br>
 												<input type="hidden" name="Student_ID" value="<?php echo $Student_ID; ?>">
 												<label class="col-form-label">Student_ID:</label>
 												<input type="text" class="form-control form-control-sm" name="Student_ID" placeholder="Student_ID" value="<?php echo $Student_ID; ?>" required>
@@ -52,7 +58,7 @@
 												<label class="col-form-label">Middle Initial:</label>
 												<input type="text" class="form-control form-control-sm" name="Middle_Initial" placeholder="Middle_Initial" value="<?php echo $Middle_Initial; ?>" required>
 												<label class="col-form-label">Name_Extension:</label>
-												<input type="text" class="form-control form-control-sm" name="Name_Extension" placeholder="Name_Extension" value="<?php echo $Name_Extension; ?>" required>
+												<input type="text" class="form-control form-control-sm" name="Name_Extension" placeholder="Name_Extension" value="<?php echo $Name_Extension; ?>" required><br/><br/>
 												 <?php
 														if ($update == true):
 														echo "<script>$('#exampleModalCenter2').modal('show');</script>";
@@ -61,12 +67,14 @@
 													<?php else: ?>
 														<input class="btn btn-danger btn-block button2" type="submit" name="submit" value="Save" onclick="return confirm('Are you sure?');">
 													<?php endif; ?>
-											</form>
-										</div>
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
+										</form>
+									</div>
+									</div>
+					</div>
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		
 	
 </body>
 </html>

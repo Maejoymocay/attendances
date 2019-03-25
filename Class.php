@@ -1,25 +1,16 @@
 <?php
-	if(isset($_POST['btn_search']))
-	{
-    $search = $_POST['search'];
-		// search in all table columns
-		// using concat mysql function
-		$query = "SELECT * FROM `class` WHERE CONCAT(`Class_ID`, `Section`, `Subject_Code`, `Semester` , `Academic_Year` , `Schedule_Day`, `Schedule_Time`) LIKE '%".$search."%'";
-		$search_result = filterTable($query);
-    
-	}
-	else {
-		$query = "SELECT * FROM `Class`";
-		$search_result = filterTable($query);
-	}
 
-	// function to connect and execute the query
-	function filterTable($query)
-	{
-		$connect = mysqli_connect("localhost", "root", "", "attendance");
-		$filter_Result = mysqli_query($connect, $query);
-		return $filter_Result;
-	}
+$host = "localhost";
+$dbusername = "root";
+$dbpassword ="";
+$dbname ="attendance";
+
+//Create Connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+
+$sql = "SELECT * FROM subject";
+$query1 = mysqli_query($conn,$sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -37,33 +28,47 @@
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
-
+     <style>
+    body  {
+        background-image: url("school.jpg");
+        background-size: cover;
+	}
+	form {
+		position: right;
+	}
+</style>
 <body>
-			                             <?php require_once 'process class 3.php'; ?>
-											<form action="process class 3.php" method="post">
-												<input type="hidden" name="Class_ID" value="<?php echo $Class_ID; ?>">
-												<label class="col-form-label">Section:</label>
-												<input type="text" class="form-control form-control-sm" name="Section" placeholder="Section" value="<?php echo $Section; ?>" required>
-												<label class="col-form-label">Subject Code:</label>
-												<input type="text" class="form-control form-control-sm" name="Subject_Code" placeholder="Subject_Code" value="<?php echo $Subject_Code; ?>" required>
-												<label class="col-form-label">Semester:</label>
-												<input type="text" class="form-control form-control-sm" name="Semester" placeholder="Semester" value="<?php echo $Semester; ?>" required>
-												<label class="col-form-label">Academic Year:</label>
-												<input type="text" class="form-control form-control-sm" name="Academic_Year" placeholder="Academic_Year" value="<?php echo $Academic_Year; ?>" required>
-												<label class="col-form-label">Schedule Day:</label>
-												<input type="text" class="form-control form-control-sm" name="Schedule_Day" placeholder="Schedule_Day" value="<?php echo $Schedule_Day; ?>" required>
-												<label class="col-form-label">Schedule Time:</label>
-												<input type="text" class="form-control form-control-sm" name="Schedule_Time" placeholder="Schedule_Time" value="<?php echo $Schedule_Time; ?>" required>
-												 <?php
-														if ($update == true):
-		
-													?>
-														<input class="btn btn-danger btn-block button2" type="submit" name="update" value="update" onclick="return confirm('Are you sure?');">
-													<?php else: ?>
-														<input class="btn btn-danger btn-block button2" type="submit" name="submit" value="Save" onclick="return confirm('Are you sure?');">
-													<?php endif; ?>
-											</form>
-		
+ <br>
+ <br>
+				<br>
+      <center>        
+     <div class="container" style="width:200px">
+		 <form method="POST" action="read class.php" style="text-align: center;">
+					<td><b>Section:</b><br/><input type="text" name="Section" required></td><br/>
+                     <label>Subject Code</label>
+					<select name="Subject_Code" class="form-control" required>
+							<?php while ($row = mysqli_fetch_array($query1)): ?>
+						<option value="<?php echo $row['Subject_Code'] ?>" ><?php echo $row['Subject_Title'] ?></option>
+							<?php endwhile;?>
+							</select>					
+		             <label>semester</label>
+					<select name="Semester" class="form-control" value="" required>
+							<option value="First Semester">First Semester</option>
+							<option value="Second Semester">Second Semester</option>
+							<option value="Summer">Summer</option>
+				    </select>        
+					 </select>
+								<td><b>Academic_Year:</b><br/><input type="text"  name="Academic_Year" required></td><br/>
+								<td><b>Schedule_Day:</b><br/><input type="text" name="Schedule_Day" required></td><br/>
+								<td><b>Schedule_Time:</b><br/><input type="text"  name="Schedule_Time" required></td><br/>
+                            <br>
+							<button class="btn btn-info" href="process class 3.php" type="submit" name="add">SAVE</button> 
+							<a href="index.php" class="btn btn-primary">Home</a>
+							<a href="read class.php" class="btn btn-primary">view</a>
+							</center>
+</div>
+</form>
+				
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -71,3 +76,5 @@
 	
 </body>
 </html>
+
+
