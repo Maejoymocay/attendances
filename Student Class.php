@@ -1,4 +1,20 @@
+<?php
 
+$host = "localhost";
+$dbusername = "root";
+$dbpassword ="";
+$dbname ="attendance";
+
+//Create Connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+
+$sql = "SELECT * FROM student";
+$query1 = mysqli_query($conn,$sql);
+$sql2 = "SELECT * FROM class";
+$query2 = mysqli_query($conn,$sql2);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,11 +44,41 @@
 <body>
 <center>
 <div class="container">
+<center>
+        <div class="container" style="width:300px">
+		<?php require_once 'pocessSC.php'; ?>
 		 <form method="POST" action="pocessSC.php">
-					<td><b>Student_ID:</b><br/><input type="text"  name="Student_ID" required></td><br/>
-					<td><b>Class_ID:</b><br/><input type="text" name="Class_ID" required></td><br/>
+		 
+		 
+		  <div class="form-group">
+	  <label>Student ID</label>
+				<?php
+						$sql = "SELECT * FROM `student`";
+						$result = mysqli_query($mysqli, $sql);
+
+				?>
+				<select name="Student_ID" class="form-control">
+                      <?php
+                          
+						  
+                          $resultCheck = mysqli_num_rows($records);
+
+                            while ($row = mysqli_fetch_array($result)) {
+                      ?>
+                           <option value="<?php echo $row['Student_ID'];?>"><?php echo $row['First_Name'];?></option>   
+                           <?php   
+                          }
+                          ?>
+            </select>
+        </div>
+					<label>Class ID</label>
+					<select name="Class_ID" class="form-control" required>
+							<?php while ($row = mysqli_fetch_array($query2)): ?>
+						<option value="<?php echo $row['Class_ID'] ?>"><?php echo $row['Class_ID'] ?></option>
+							<?php endwhile;?>
+			</select>
 <br>					
-<div class="container">
+
 <button class="btn btn-info" href="SCread.php" type="submit" name="add">SAVE</button> 
 <a href="index.php" class="btn btn-primary">Home</a>
 <a href=" SCread.php" class="btn btn-primary">Back</a>
@@ -41,7 +87,7 @@
 </form>
          
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="attendance/jquery/jquery.min.js"></script>
+    <script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
 	</div>

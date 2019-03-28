@@ -59,7 +59,7 @@
 		$Schedule_Time = $_POST['Schedule_Time'];
 		
 		$mysqli->query("UPDATE class SET Class_ID='$Class_ID', Section='$Section', Subject_Code='$Subject_Code', Academic_Year='$Academic_Year', Schedule_Day='$Schedule_Day', Schedule_Time='$Schedule_Time' WHERE Class_ID='$Class_ID'") or die($mysqli->error);
-		header("location: Read class.php");
+		header("location: read class.php");
 	}
 
 

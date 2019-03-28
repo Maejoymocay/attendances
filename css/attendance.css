@@ -86,7 +86,7 @@ body {
 	width:100%;
 	font-size: 18px;
 	line-height: 60px;
-	background-color: #009788;
+	background-color: #493a3e;
 }
 .sidebar-nav>.sidebar-brand img{
 	width:50%;
@@ -126,12 +126,12 @@ body {
 }
 
 .navbar-green{
-	background-color:#009788;
+	background-color:#493a3e;
 }
-.navbar-green  a{color:white;}
-.navbar-green li  a:hover{color:white; background-color:#009788;}
-.navbar-green li  a:active{color:white; background-color:#009788;}
-.navbar-green li  a:visited{color:white; background-color:#009788;}
+.navbar-red  a{color:white;}
+.navbar-red li  a:hover{color:white; background-color:#493a3e;}
+.navbar-red li  a:active{color:white; background-color:#493a3e;}
+.navbar-red li  a:visited{color:white; background-color:#493a3e;}
 .navbar-toggle .glyphicon-menu-hamburger{font-size:20px; color:white;}
 
 .content{
@@ -154,23 +154,22 @@ body {
 	}
 .btn-info.btn-save{
 	margin-top:10px;
-	background-color: #009788;
-	border:none;
+	background-color: #493a3e;	border:none;
 }
 .btn-save:hover{
-	background-color: #009788;
+	background-color: #493a3e;
 	border:none;
 }
 .btn-save:visited{
-	background-color: #009788;
+	background-color: #493a3e;
 	border:none;
 }
 .btn-save:active{
-	background-color: #009788;
+	background-color: #493a3e;
 	border: none;
 }
 .btn-save:link{
-	background-color: #009788;
+	background-color: #493a3e;
 	border:none;
 }
 .table-font{
@@ -196,8 +195,8 @@ body {
 .form{
 	margin:20px;
 }
-.btn-green{
-	background:#009788;
+.btn-violet{
+	background:#493a3e;
 	border: 1px solid white;
 }
 .glyphicon-search{

@@ -40,38 +40,47 @@ $query1 = mysqli_query($conn,$sql);
 <body>
  <br>
  <br>
-				<br>
+   <br>
       <center>        
-     <div class="container" style="width:200px">
-		 <form method="POST" action="read class.php" style="text-align: center;">
-					<td><b>Section:</b><br/><input type="text" name="Section" required></td><br/>
-                     <label>Subject Code</label>
+   <div class="container" style="width:200px">
+	 <?php require_once 'process class 3.php'; ?>
+		 <form method="POST" action="process class 3.php" style="text-align: center;">
+					<input type="hidden" name="Class_ID" value="<?php echo $Class_ID?>">
+					<label>Section</label>
+					<input type="text" class="form-control" name="Section" placeholder="Section" value="<?php echo $Section; ?>" required ></td>
+					<label>Subject Code</label>
 					<select name="Subject_Code" class="form-control" required>
 							<?php while ($row = mysqli_fetch_array($query1)): ?>
 						<option value="<?php echo $row['Subject_Code'] ?>" ><?php echo $row['Subject_Title'] ?></option>
 							<?php endwhile;?>
-							</select>					
-		             <label>semester</label>
+					</select>
+					<label>Semester</label>
 					<select name="Semester" class="form-control" value="" required>
 							<option value="First Semester">First Semester</option>
 							<option value="Second Semester">Second Semester</option>
 							<option value="Summer">Summer</option>
-				    </select>        
-					 </select>
-								<td><b>Academic_Year:</b><br/><input type="text"  name="Academic_Year" required></td><br/>
-								<td><b>Schedule_Day:</b><br/><input type="text" name="Schedule_Day" required></td><br/>
-								<td><b>Schedule_Time:</b><br/><input type="text"  name="Schedule_Time" required></td><br/>
-                            <br>
-							<button class="btn btn-info" href="process class 3.php" type="submit" name="add">SAVE</button> 
-							<a href="index.php" class="btn btn-primary">Home</a>
-							<a href="read class.php" class="btn btn-primary">view</a>
-							</center>
-</div>
-</form>
-				
+							</select>
+					<label>Academic Year</label>
+					<input type="text" class="form-control"  name="Academic Year" placeholder="Academic Year" value="<?php echo $Academic_Year; ?>" required ></td>
+					<label>Schedule Day</label>
+					<input type="text" class="form-control" name="Schedule Day" placeholder="Schedule Day" value="<?php echo $Schedule_Day; ?>" required ></td>
+					<label>Schedule Time</label>
+					<input type="text" class="form-control" name="Schedule Time" placeholder="Schedule Time" value="<?php echo $Schedule_Time; ?>" required ></td>
+                        <br>
+							<?php
+									if ($update == true):
+								?>
+									<button class="btn btn-success" type="submit" name="update">update</button>
+								<?php else: ?>
+									<button class="btn btn-info" type="submit" name="class">Save</button>
+								<?php endif; ?>
+								<a href="read class.php"><button type="submit"class="btn btn-info" >View</a></button>
+	                    </center>					
+	              </div>
+		 </form>		
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="attendance/jquery/jquery.min.js"></script>
+    <script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
 	
 </body>

@@ -46,7 +46,7 @@
 </head>
 
 <body>
- <a href="total.php" button type="button" class="btn btn-primary">View</a><td> <a href="take attendance.php" button type="button" class="btn btn-primary">Back</a></td>
+ <a href="totaal.php" button type="button" class="btn btn-primary">View</a><td> <a href="take attendance.php" button type="button" class="btn btn-primary">Back</a></td>
 <div class ="container">
 	<table class="table">
   <thead>
@@ -69,10 +69,16 @@
 		<td><?php echo $row['Last_Name'];?></td>
 		<td><?php echo $row['Middle_Initial'];?></td>
 		<td><?php echo $row['Name_Extension'];?></td>
-		<td><input type ="radio">Present</td>
-		<td><input type ="radio">Absent</td>
-		<td><input type ="radio">Late</td>
-		<td><input type ="radio">Excuse</td>
+		
+		<form method="Post" action="">
+		<td>
+		<input type ="radio">Present
+		<input type ="radio">Absent
+		<input type ="radio">Late
+		<input type ="radio">Excuse
+		</td>
+		
+		</form>
   </tr>
   </tbody>
   <?php endwhile;?>

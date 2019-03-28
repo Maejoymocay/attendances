@@ -22,20 +22,10 @@
 }
 </style>
 <br>
-<br>
-<br>
-          <br>
-               <body>
-                <form method="POST"action="process2.php" style="text-align: center;">
-					<td><b>Subject Code:</b><br/><input type="text"  name="Subject_Code" required></td><br/>
-					<td><b>Subject Title:</b><br/><input type="text" name="Subject_Title" required></td><br/>
-                 <br>					
-<div class="container">
-<button class="btn btn-info" href="subject read.php" type="submit" name="add">SAVE</button> 
-<a href="index.php" class="btn btn-primary">Home</a>
-<a href=" subject read.php" class="btn btn-primary">view</a>
-</div>
-</form>    
+    <br>
+	    <br>
+	         <br>
+<a href="take attendance.php" button type="button" class="btn btn-primary">Back</a>
     <!-- Bootstrap core JavaScript -->
     <script src="attendace/jquery/jquery.min.js"></script>
     <script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>

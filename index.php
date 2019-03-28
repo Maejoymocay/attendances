@@ -39,10 +39,13 @@
 					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
 				</li>
 				<li>
-					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
 				</li>
 				<li>
 					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+				</li>
+				<li>
+					<a href="Generalreports.php" title="General Reports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
 				</li>
 			</ul>
 		</div>
@@ -65,8 +68,9 @@
                     <div class="container">
 							 <header class="jumbotron my-4">
 								<h1 class="display-3">Class Attendance</h1>
-								<p class="lead">Early is on time<br> on time is late.<br> and late is unnaceptable!</p>
+								<p class="lead">An absent student can miss a whole day, but you only need to record it once<br> Attendance can set student presence based on their last recorded status.</p>
 								<center>
+								<br>
 								<a href="class.php" class="btn btn-primary">class</a>
 								<a href="Student.php" class="btn btn-primary">Add student</a>
 								<a href="Student Class.php" class="btn btn-primary"> Add student class</a>
@@ -75,8 +79,8 @@
 							  </header>
 				</div>
 					<!-- Bootstrap core JavaScript -->
-					<script src="vendor/jquery/jquery.min.js"></script>
-					<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+					<script src="attendace/jquery/jquery.min.js"></script>
+					<script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
 				  <br>
 					<br>	
 					 <footer class="py-5 bg-dark">

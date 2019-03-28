@@ -4,12 +4,12 @@
     $search = $_POST['search'];
 		// search in all table columns
 		// using concat mysql function
-		$query = "SELECT * FROM `class` WHERE CONCAT(`Class_ID`, `Section`, `Subject_Code`, `Semester`, `Academic_Year`, `Schedule_Day`, `Schedule_Time`,) LIKE '%".$search."%'";
+		$query = "SELECT * FROM `student` WHERE CONCAT(`Student_ID`, `First_Name`, `Last_Name`, `Middle_Initial` , `Name_Extension`) LIKE '%".$search."%'";
 		$search_result = filterTable($query);
     
 	}
 	else {
-		$query = "SELECT * FROM `class`";
+		$query = "SELECT * FROM `student`";
 		$search_result = filterTable($query);
 	}
 
@@ -20,11 +20,11 @@
 		$filter_Result = mysqli_query($connect, $query);
 		return $filter_Result;
 	}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Classroom Attendance</title>
     <meta charset="utf-8">
@@ -38,18 +38,15 @@
 	<script src="js/attendance.js"></script>
 </head>
 <body>
-
-    <div id="wrapper">
-		
+   <div id="wrapper">
 		<!-- Sidebar -->
 				<div id="sidebar-wrapper">
-			<ul class="sidebar-nav">
+			        <ul class="sidebar-nav">
 				<li class="sidebar-brand">
 					<img src="images/icon.png" />
-
 				</li>
 				<br>
-				<li>
+                  <li>
 					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
 				</li>
 				<li>
@@ -72,7 +69,7 @@
 				</li>
 			</ul>
 		</div>
-	<!-- Page Content -->
+		<!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
 <!-- Navigation-->
@@ -90,47 +87,7 @@
 				</nav>
              <br>
           <br>
- <body>
-<div class ="container">
-	<table class="table">
-  <thead>
-    <tr>
-	  <th>Class ID</th>
-      <th>Section</th>
-	  <th>Subject Code</th>
-	  <th>Semester</th>
-	  <th>Academic Year</th>
-	  <th>Schedule Day</th>
-      <th>Schedule Time</th>
-	  
-    </tr>
-  </thead>
-  <?php while($row = mysqli_fetch_array($search_result)):?>
-  <tbody>
-    <tr>
-		<td><?php echo $row['Class_ID'];?></td>
-		<td><?php echo $row['Section'];?></td>
-		<td><?php echo $row['Subject_Code'];?></td>
-		<td><?php echo $row['Semester'];?></td>
-		<td><?php echo $row['Academic_Year'];?></td>
-		<td><?php echo $row['Schedule_Day'];?></td>
-		<td><?php echo $row['Schedule_Time'];?></td>
-		
-		
-	 <td><div class="dropdown">
- <a href ="takeattendance.php?class=<?php echo $row['Class_ID'];?>"><button type="button" type="text-white">check attendance</a></button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-<a class="dropdown-item" href="classprocess.php?delete=<?php echo $row["Class_ID"]; ?>" onclick="return confirm('Are you sure?');">Delete</a>
-<a class="dropdown-item" href="class.php?edit=<?php echo $row["Class_ID"]; ?>" onclick="return confirm('Are you sure?');">Edit</a>
- 
-  </div>
-</div>
-</td>
-</tr>
-
-  </tbody>
-  <?php endwhile;?>
-</div>
+           
     <!-- Bootstrap core JavaScript -->
     <script src="attendace/jquery/jquery.min.js"></script>
     <script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>

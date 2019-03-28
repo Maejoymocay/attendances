@@ -20,7 +20,7 @@
 		$Name_Extension = $_POST['Name_Extension'];
 
 		
-		$mysqli->query("INSERT INTO student (Student_ID, First_Name, Last_Name, Middle_Initial, Name_Extension) VALUES('$Student_ID', '$First_Name', '$Last_Name', '$Middle_Initial', '$Name_Extention')") or die($mysqli->error);
+		$mysqli->query("INSERT INTO student (Student_ID, First_Name, Last_Name, Middle_Initial, Name_Extension) VALUES('$Student_ID', '$First_Name', '$Last_Name', '$Middle_Initial', '$Name_Extension')") or die($mysqli->error);
 		header("location: Read.php");
 	}
 	if (isset($_POST['add'])) {
@@ -30,7 +30,7 @@
 		$Middle_Initial = $_POST['Middle_Initial'];
 		$Name_Extension = $_POST['Name_Extension'];
 		
-		$mysqli->query("INSERT INTO student (Student_ID, First_Name, Last_Name, Middle_Initial, Name_Extension) VALUES('$Student_ID', '$First_Name', '$Last_Name', '$Middle_Initial', '$Name_Extention')") or die($mysqli->error);
+		$mysqli->query("INSERT INTO student (Student_ID, First_Name, Last_Name, Middle_Initial, Name_Extension) VALUES('$Student_ID', '$First_Name', '$Last_Name', '$Middle_Initial', '$Name_Extension')") or die($mysqli->error);
 		header("location: read.php");
 	}
 	if (isset($_GET['edit'])) {

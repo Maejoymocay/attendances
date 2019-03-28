@@ -59,10 +59,13 @@
 					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
 				</li>
 				<li>
-					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
 				</li>
 				<li>
 					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+				</li>
+				<li>
+					<a href="Generalreports.php" title="General Reports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
 				</li>
 			</ul>
 		</div>
@@ -94,7 +97,7 @@
 							<th>First_Name</th>
 							<th>Last_Name</th>
 							<th>Middle_Initial</th>
-							<th>Name_Extension</th>
+							<th>Name_Extention</th>
 							</tr>
 				  </thead>
 					<?php while($row = mysqli_fetch_array($search_result)):?>
@@ -116,8 +119,8 @@
 					<?php endwhile;?>
 				</table>
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="attendace/jquery/jquery.min.js"></script>
+    <script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
 </div>
    </body>
       </html>

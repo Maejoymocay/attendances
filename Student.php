@@ -31,18 +31,17 @@
 					<td><b>Last_Name:</b><br/><input type="text"  name="Last_Name" required></td><br/>
 					<td><b>Middle_Initial:</b><br/><input type="text" name="Middle_Initial" required></td><br/>
 					<td><b>Name_Extension:</b><br/><input type="text"  name="Name_Extension" required></td><br/>
-<br>					
-<div class="container">
-<button class="btn btn-info" href="read.php" type="submit" name="add">SAVE</button> 
-<a href="index.php" class="btn btn-primary">Home</a>
-<a href="read.php" class="btn btn-primary">view</a>
-</div>
+                    <br>					
+					<button class="btn btn-info" href="read.php" type="submit" name="add">SAVE</button> 
+					<a href="index.php" class="btn btn-primary">Home</a>
+					<a href="read.php" class="btn btn-primary">view</a>
+					</div>
 
 </form>
 				
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="attendace/jquery/jquery.min.js"></script>
+    <script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
 	
 </body>
