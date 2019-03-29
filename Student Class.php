@@ -47,9 +47,7 @@ $query2 = mysqli_query($conn,$sql2);
 <center>
         <div class="container" style="width:300px">
 		<?php require_once 'pocessSC.php'; ?>
-		 <form method="POST" action="pocessSC.php">
-		 
-		 
+		 <form method="POST" action="pocessSC.php">	 
 		  <div class="form-group">
 	  <label>Student ID</label>
 				<?php
@@ -57,7 +55,7 @@ $query2 = mysqli_query($conn,$sql2);
 						$result = mysqli_query($mysqli, $sql);
 
 				?>
-				<select name="Student_ID" class="form-control">
+				<select name="Student_ID" class="form-control mdb-select" multiple>
                       <?php
                           
 						  
@@ -85,9 +83,13 @@ $query2 = mysqli_query($conn,$sql2);
 </div>
 </center>
 </form>
-         
+    </div>     
     <!-- Bootstrap core JavaScript -->
-    <script src="attendance/jquery/jquery.min.js"></script>
-    <script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <!-- <script src="attendance/jquery/jquery.min.js"></script>
+    <script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+	<script>$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});</script>
+	</body>
+	</html>
 	
-	</div>

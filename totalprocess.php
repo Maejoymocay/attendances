@@ -5,22 +5,17 @@
 	
 	$Student_ID= 0;
 	$update = false;
-	$Student_ID= '';
-	$First_Name = '';
-	$Last_Name = '';
-	$Middle_Initial = '';
-	$Name_Extension = '';
+	$Time_Stamp= '';
+	$Class_ID = '';
+	$Status = '';
 
-	if (isset($_POST['student'])) {
+	if (isset($_POST['take_attendance'])) {
 		$Student_ID = $_POST['Student_ID'];
-		$First_Name = $_POST['First_Name'];
-		$Last_Name= $_POST['Last_Name'];
-		$Middle_Initial = $_POST['Middle_Initial'];
-		$Name_Extension = $_POST['Name_Extension'];
-
-		
-		$mysqli->query("INSERT INTO student (Student_ID, First_Name, Last_Name, Middle_Initial, Name_Extension) VALUES('$Student_ID', '$First_Name', '$Last_Name', '$Middle_Initial', '$Name_Extention')") or die($mysqli->error);
-		header("location: Read.php");
+		$Time_Stamp = $_POST['Time_Stamp'];
+		$Class_ID= $_POST['Class_ID'];
+		$Status = $_POST['Status'];
+		$mysqli->query("INSERT INTO take_attendance (Student_ID, Time_Stamp, Class_ID, Status) VALUES('$Student_ID', '$First_Name', '$Last_Name', '$Middle_Initial', '$Name_Extention')") or die($mysqli->error);
+		header("location: totaal.php");
 	}
 	if (isset($_POST['add'])) {
 		$Student_ID = $_POST['Student_ID'];

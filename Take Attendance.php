@@ -24,7 +24,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Classroom Attendance</title>
     <meta charset="utf-8">
@@ -38,7 +37,6 @@
 	<script src="js/attendance.js"></script>
 </head>
 <body>
-
     <div id="wrapper">
 		
 		<!-- Sidebar -->
@@ -72,10 +70,10 @@
 				</li>
 			</ul>
 		</div>
-	<!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-<!-- Navigation-->
+		<!-- Page Content -->
+					<div id="page-content-wrapper">
+						<div class="container-fluid">
+			<!-- Navigation-->
 				<nav class="navbar navbar-green">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -90,50 +88,45 @@
 				</nav>
              <br>
           <br>
- <body>
-<div class ="container">
-	<table class="table">
-  <thead>
-    <tr>
-	  <th>Class ID</th>
-      <th>Section</th>
-	  <th>Subject Code</th>
-	  <th>Semester</th>
-	  <th>Academic Year</th>
-	  <th>Schedule Day</th>
-      <th>Schedule Time</th>
-	  
-    </tr>
-  </thead>
-  <?php while($row = mysqli_fetch_array($search_result)):?>
-  <tbody>
-    <tr>
-		<td><?php echo $row['Class_ID'];?></td>
-		<td><?php echo $row['Section'];?></td>
-		<td><?php echo $row['Subject_Code'];?></td>
-		<td><?php echo $row['Semester'];?></td>
-		<td><?php echo $row['Academic_Year'];?></td>
-		<td><?php echo $row['Schedule_Day'];?></td>
-		<td><?php echo $row['Schedule_Time'];?></td>
-		
-		
-	 <td><div class="dropdown">
- <a href ="takeattendance.php?class=<?php echo $row['Class_ID'];?>"><button type="button" type="text-white">check attendance</a></button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-<a class="dropdown-item" href="classprocess.php?delete=<?php echo $row["Class_ID"]; ?>" onclick="return confirm('Are you sure?');">Delete</a>
-<a class="dropdown-item" href="class.php?edit=<?php echo $row["Class_ID"]; ?>" onclick="return confirm('Are you sure?');">Edit</a>
- 
-  </div>
-</div>
-</td>
-</tr>
-
-  </tbody>
-  <?php endwhile;?>
-</div>
-    <!-- Bootstrap core JavaScript -->
-    <script src="attendace/jquery/jquery.min.js"></script>
-    <script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
-</div>
-   </body>
-      </html>
+			 <body>
+			<div class ="container">
+				<table class="table">
+			  <thead>
+				<tr>
+				  <th>Class ID</th>
+				  <th>Section</th>
+				  <th>Subject Code</th>
+				  <th>Semester</th>
+				  <th>Academic Year</th>
+				  <th>Schedule Day</th>
+				  <th>Schedule Time</th>
+				</tr>
+			  </thead>
+			  <?php while($row = mysqli_fetch_array($search_result)):?>
+			  <tbody>
+				<tr>
+					<td><?php echo $row['Class_ID'];?></td>
+					<td><?php echo $row['Section'];?></td>
+					<td><?php echo $row['Subject_Code'];?></td>
+					<td><?php echo $row['Semester'];?></td>
+					<td><?php echo $row['Academic_Year'];?></td>
+					<td><?php echo $row['Schedule_Day'];?></td>
+					<td><?php echo $row['Schedule_Time'];?></td>	
+				 <td><div class="dropdown">
+			 <a href ="takeattendance.php?class=<?php echo $row['Class_ID'];?>"><button type="button" type="text-white">check attendance</a></button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+			<a class="dropdown-item" href="classprocess.php?delete=<?php echo $row["Class_ID"]; ?>" onclick="return confirm('Are you sure?');">Delete</a>
+			<a class="dropdown-item" href="class.php?edit=<?php echo $row["Class_ID"]; ?>" onclick="return confirm('Are you sure?');">Edit</a>
+			  </div>
+			</div>
+			</td>
+			</tr>
+			  </tbody>
+			  <?php endwhile;?>
+		    </div>
+			<!-- Bootstrap core JavaScript -->
+			<script src="attendace/jquery/jquery.min.js"></script>
+			<script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
+			</div>
+		   </body>
+		   </html>

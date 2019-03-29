@@ -1,4 +1,6 @@
-
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
 /*$("#menu-toggle").click(function(e) {
 	e.preventDefault();
 	$("#wrapper").toggleClass("toggled");
