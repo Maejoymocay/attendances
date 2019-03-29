@@ -84,9 +84,10 @@
 				</nav>
              <br>
           <br>
-             <a href="student.php"class="btn btn-primary">Add Student</a>	
+     
  <body>
 <div class="table-responsive">
+  <a href="student.php"class="btn btn-primary">Add Student</a>	
 			<table class="table table-hover table-dark">
 				  <thead>
 						<tr>
@@ -96,7 +97,7 @@
 							<th>Middle_Initial</th>
 							<th>Name_Extension</th>
 							</tr>
-				  </thead>
+				    </thead>
 					<?php while($row = mysqli_fetch_array($search_result)):?>
 					 <tbody>
 					    	<tr>
@@ -115,9 +116,10 @@
 						</tbody>
 					<?php endwhile;?>
 				</table>
+				</div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-</div>
+
    </body>
       </html>

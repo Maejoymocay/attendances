@@ -128,5 +128,5 @@
 			<script src="attendace/jquery/jquery.min.js"></script>
 			<script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
 			</div>
-		   </body>
-		   </html>
+ </body>
+ </html>

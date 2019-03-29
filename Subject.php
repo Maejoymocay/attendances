@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Classroom Attendance</title>
     <meta charset="utf-8">
@@ -14,16 +13,9 @@
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
-<style>
-    body  {
-        background-image: url("school.jpg");
-        background-size: cover;
-   
-}
-</style>
 <br>
-<br>
-<br>
+   <br>
+     <br>
         <br>
              <body>
                 <form method="POST"action="process2.php" style="text-align: center;">
@@ -39,6 +31,6 @@
     <!-- Bootstrap core JavaScript -->
     <script src="attendace/jquery/jquery.min.js"></script>
     <script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
 	</div>
-</body>
+ </body>
+ </html>

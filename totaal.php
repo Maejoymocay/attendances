@@ -9,7 +9,7 @@
     
 	}
 	else {
-		$query = "SELECT * FROM `Take_Attendance`";
+		$query = "SELECT * FROM `Take_Attendance` WHERE Class_ID='".$_GET['class_id']."'";
 		$search_result = filterTable($query);
 	}
 
@@ -21,6 +21,9 @@
 		return $filter_Result;
 	}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 		<br>
 			<br>
 			   <br>
@@ -48,27 +51,19 @@
 						</tr>
 					  </thead>		 
 					 <?php while($row = mysqli_fetch_array($search_result)):?>
-					  <tbody>
-						<tr>
+			     	<tbody>
+						   <tr>
 							<td><?php echo $row['Student_ID'];?></td>
 							<td><?php echo $row['Time_Stamp'];?></td>
 							<td><?php echo $row['Class_ID'];?></td>
-							<td><?php echo $row['Status'];?></td>
-					<form method="Post" action="">
-							<td>
-							<input type ="radio">Present
-							<input type ="radio">Absent
-							<input type ="radio">Late
-							<input type ="radio">Excuse
-							</td>							
-							</form>
-					  </tr>
-					  </tbody>
-					  <?php endwhile;?>					  
+							<td><?php echo $row['status'];?></td>
+					      </tr>
+			     </tbody>
+					 <?php endwhile;?>					  
 					  </table>
 					</div>
 						<!-- Bootstrap core JavaScript -->
 						<script src="attendance/jquery/jquery.min.js"></script>
 						<script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>
-					</body>
-					</html>
+</body>
+	</html>

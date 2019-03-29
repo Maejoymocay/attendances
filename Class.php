@@ -12,7 +12,6 @@ $sql = "SELECT * FROM subject";
 $query1 = mysqli_query($conn,$sql);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,15 +26,6 @@ $query1 = mysqli_query($conn,$sql);
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
-     <style>
-    body  {
-        background-image: url("school.jpg");
-        background-size: cover;
-	}
-	form {
-		position: right;
-	}
-</style>
 		<body>
 			 <br>
 				 <br>
@@ -80,7 +70,7 @@ $query1 = mysqli_query($conn,$sql);
 					<!-- Bootstrap core JavaScript -->
 					<script src="attendance/jquery/jquery.min.js"></script>
 					<script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>
-				</body>
-				</html>
+	 </body>
+	 </html>
 
 
