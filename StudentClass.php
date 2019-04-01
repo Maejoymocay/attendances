@@ -1,4 +1,20 @@
+ <?php
 
+$host = "localhost";
+$dbusername = "root";
+$dbpassword ="";
+$dbname ="attendance";
+
+//Create Connection
+$conn = new mysqli ($host, $dbusername, $dbpassword, $dbname);
+
+$sql = "SELECT * FROM student";
+$query1 = mysqli_query($conn,$sql);
+$sql2 = "SELECT * FROM class";
+$query2 = mysqli_query($conn,$sql2);
+
+
+?>
 <DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +29,7 @@
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
-
 <body>
-
     <div id="wrapper">
 		
 		<!-- Sidebar -->
@@ -50,7 +64,8 @@
 		</div>
 			<!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="container-fluid">		
+            <div class="container-fluid">
+				
 				<!-- Navigation-->
 				<nav class="navbar navbar-green">
 					<div class="container-fluid">
@@ -60,30 +75,64 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>                        
 							</button>
-					<a class="navbar-brand" onclick="openNav()"><span  class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Class Attendance</a>
+							<a class="navbar-brand" onclick="openNav()"><span  class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Class Attendance</a>
 					</div>
-					<style>
-				         body  {
-						background-image: url("school.jpg");
-						background-size: cover;		   
-						}
-				</style>
 				</nav>
-              <br>
-             <body>
-                <form method="POST"action="process2.php" style="text-align: center;">
-					<td><b>Subject Code:</b><br/><input type="text"  name="Subject_Code" required></td><br/>
-					<td><b>Subject Title:</b><br/><input type="text" name="Subject_Title" required></td><br/>
-                    <br>					
-					<div class="container">
-					<button class="btn btn-info" href="subjectread.php" type="submit" name="add">SAVE</button> 
-					<a href="index.php" class="btn btn-primary">Home</a>
-					<a href=" subjectread.php" class="btn btn-primary">view</a>
-					</div>
-				</form>    
-    <!-- Bootstrap core JavaScript -->
-    <script src="attendace/jquery/jquery.min.js"></script>
-    <script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
-	</div>
- </body>
- </html>
+				<style>
+					body  {
+						background-image: url("school.jpg");
+						background-size: cover;
+				   
+				}
+				</style>
+				<br>
+					<br>
+						<br>
+						<br>
+						<body>
+						<center>
+						<div class="container">
+						<center>
+								<div class="container" style="width:300px">
+								<?php require_once 'pocessSC.php'; ?>
+								 <form method="POST" action="pocessSC.php">	 
+								  <div class="form-group">
+							  <label>Student ID</label>
+										<?php
+												$sql = "SELECT * FROM `student`";
+												$result = mysqli_query($mysqli, $sql);
+
+										?>
+										<select name="Student_ID" class="form-control mdb-select">
+											  <?php
+												  
+												  
+												  $resultCheck = mysqli_num_rows($records);
+
+													while ($row = mysqli_fetch_array($result)) {
+											  ?>
+												   <option value="<?php echo $row['Student_ID'];?>"><?php echo $row['First_Name'];?></option>   
+												   <?php   
+												  }
+												  ?>
+									     </select>
+								           </div>
+											<label>Class ID</label>
+											<select name="Class_ID" class="form-control" required>
+													<?php while ($row = mysqli_fetch_array($query2)): ?>
+												<option value="<?php echo $row['Class_ID'] ?>"><?php echo $row['Class_ID'] ?></option>
+													<?php endwhile;?>
+								           </select>
+					            	<br>					
+						<button class="btn btn-info" href="SCread.php" type="submit" name="add">SAVE</button> 
+						<a href="index.php" class="btn btn-primary">Home</a>
+						<a href="SCread.php" class="btn btn-primary">Back</a>
+						</div>
+						</center>
+						</form>
+							</div>     
+						<script src="attendace/jquery/jquery.min.js"></script>
+						<script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
+					</body>
+					</html>
+

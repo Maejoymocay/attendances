@@ -46,11 +46,11 @@
 					<img src="images/icon.png" />
 				</li>
 				<br>
-                  <li>
+                <li>
 					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
 				</li>
 				<li>
-					<a href="read class.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
+					<a href="readclass.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
 				</li>
 				<li>
 					<a href="read.php" title="read"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
@@ -59,17 +59,20 @@
 					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
 				</li>
 				<li>
-					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+					<a href="Subjectread.php" title="Subjectread"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
 				</li>
 				<li>
-					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+					<a href="TakeAttendances.php" title="TakeAttendances"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+				</li>
+				<li>
+					<a href="Generalreports.php" title="GeneralReports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
 				</li>
 			</ul>
 		</div>
 		<!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-<!-- Navigation-->
+       <!-- Navigation-->
 				<nav class="navbar navbar-green">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -84,9 +87,9 @@
 				</nav>
              <br>
           <br>
-             <a href="student.php"class="btn btn-primary">Add Student</a>	
- <body>
-<div class="table-responsive">
+		 <body>
+		<div class="table-responsive">
+       <a href="student.php"class="btn btn-primary">Add Student</a>	
 			<table class="table table-hover table-dark">
 				  <thead>
 						<tr>
@@ -96,7 +99,7 @@
 							<th>Middle_Initial</th>
 							<th>Name_Extension</th>
 							</tr>
-				  </thead>
+				    </thead>
 					<?php while($row = mysqli_fetch_array($search_result)):?>
 					 <tbody>
 					    	<tr>
@@ -106,7 +109,7 @@
 							<td><?php echo $row['Middle_Initial'];?></td>
 							<td><?php echo $row['Name_Extension'];?></td>
 							<td>
-					 <div class>
+				        	 <div class>
 							<a class="btn btn-primary" href="edit1.php?edit=<?php echo $row['Student_ID']; ?>">Edit</a>
 						    <a href="delete.php?Student_ID=<?php echo $row["Student_ID"]; ?>"><button type="submit"class="btn btn-info"  onclick="return confirm('Are you sure?');" >Delete</button></a>
 						</div>
@@ -115,9 +118,9 @@
 						</tbody>
 					<?php endwhile;?>
 				</table>
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-</div>
-   </body>
-      </html>
+				</div>
+				<!-- Bootstrap core JavaScript -->
+				<script src="vendor/jquery/jquery.min.js"></script>
+				<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+			   </body>
+				  </html>

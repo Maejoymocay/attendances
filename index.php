@@ -1,7 +1,6 @@
 
 <DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Classroom Attendance</title>
     <meta charset="utf-8">
@@ -24,13 +23,11 @@
 			<ul class="sidebar-nav">
 				<li class="sidebar-brand">
 					<img src="images/icon.png" />
-				</li>
-				<br>
 				<li>
 					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
 				</li>
 				<li>
-					<a href="read class.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
+					<a href="readclass.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
 				</li>
 				<li>
 					<a href="read.php" title="read"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
@@ -39,20 +36,19 @@
 					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
 				</li>
 				<li>
-					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+					<a href="Subjectread.php" title="Subjectread"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
 				</li>
 				<li>
-					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+					<a href="TakeAttendances.php" title="TakeAttendances"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
 				</li>
 				<li>
-					<a href="Generalreports.php" title="General Reports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
+					<a href="Generalreports.php" title="GeneralReports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
 				</li>
 			</ul>
 		</div>
 			<!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-				
 				<!-- Navigation-->
 				<nav class="navbar navbar-green">
 					<div class="container-fluid">
@@ -65,6 +61,12 @@
 							<a class="navbar-brand" onclick="openNav()"><span  class="glyphicon glyphicon-menu-hamburger"></span>&nbsp;&nbsp;Class Attendance</a>
 					</div>
 				</nav>
+				<style>
+				     body  {
+						background-image: url("school.jpg");
+						background-size: cover;		   
+						}
+						</style>
                     <div class="container">
 							 <header class="jumbotron my-4">
 								<h1 class="display-3">Class Attendance</h1>
@@ -73,11 +75,11 @@
 								<br>
 								<a href="class.php" class="btn btn-primary">class</a>
 								<a href="Student.php" class="btn btn-primary">Add student</a>
-								<a href="Student Class.php" class="btn btn-primary"> Add student class</a>
+								<a href="StudentClass.php" class="btn btn-primary"> Add student class</a>
 								<a href="subject.php" class="btn btn-primary">Add subject</a>
 								</center>
 							  </header>
-				</div>
+			      	</div>
 					<!-- Bootstrap core JavaScript -->
 					<script src="attendace/jquery/jquery.min.js"></script>
 					<script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -85,7 +87,7 @@
 					<br>	
 					 <footer class="py-5 bg-dark">
 					  <div class="container">
-						<p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+						<p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
 					  </div>
 				</body>
 				</html>

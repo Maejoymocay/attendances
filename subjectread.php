@@ -25,7 +25,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Classroom Attendance</title>
     <meta charset="utf-8">
@@ -47,11 +46,11 @@
 					<img src="images/icon.png" />
 				</li>
 				<br>
-                <li>
+               <li>
 					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
 				</li>
 				<li>
-					<a href="read class.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
+					<a href="readclass.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
 				</li>
 				<li>
 					<a href="read.php" title="read"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
@@ -60,13 +59,13 @@
 					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
 				</li>
 				<li>
-					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+					<a href="Subjectread.php" title="Subjectread"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
 				</li>
 				<li>
-					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+					<a href="TakeAttendances.php" title="TakeAttendances"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
 				</li>
 				<li>
-					<a href="Generalreports.php" title="General Reports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
+					<a href="Generalreports.php" title="GeneralReports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
 				</li>
 			</ul>
 		</div>
@@ -97,7 +96,7 @@
 										<th>Subject_Code</th>
 										<th>Subject_Title</th>
 										</tr>
-							  </thead>
+							    </thead>
 								<?php while($row = mysqli_fetch_array($search_result)):?>
 									<tbody>
 									<tr>
@@ -106,7 +105,7 @@
 										<td>
 											<div class="btn-group">
 											  <div class>
-												<a class="btn btn-primary" href="edit subject.php?edit=<?php echo $row['Subject_Code']; ?>">Edit</a>
+												<a class="btn btn-primary" href="editsubject.php?edit=<?php echo $row['Subject_Code']; ?>">Edit</a>
 												<a href="delete1.php?Subject_Code=<?php echo $row["Subject_Code"]; ?>"><button type="submit"class="btn btn-info"  onclick="return confirm('Are you sure?');" >Delete</button></a>
 											  </div>
 											</div>
@@ -115,7 +114,7 @@
 									</tbody>
 									
 								<?php endwhile;?>
-						</table>		
+					        	</table>		
 								<!-- Bootstrap core JavaScript -->
 								<script src="attendace/jquery/jquery.min.js"></script>
 								<script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>

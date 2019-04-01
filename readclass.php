@@ -54,7 +54,7 @@
 					<a href="index.php" title="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
 				</li>
 				<li>
-					<a href="read class.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
+					<a href="readclass.php" title="read class"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class</a>
 				</li>
 				<li>
 					<a href="read.php" title="read"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
@@ -63,20 +63,20 @@
 					<a href="SCread.php" title="SCread"><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Class</a>
 				</li>
 				<li>
-					<a href="Subject read.php" title="Subject read"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
+					<a href="Subjectread.php" title="Subjectread"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subject</a>
 				</li>
 				<li>
-					<a href="Take Attendance.php" title="Take Attendance"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
+					<a href="TakeAttendances.php" title="TakeAttendances"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take attendance</a>
 				</li>
 				<li>
-					<a href="Generalreports.php" title="General Reports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
+					<a href="Generalreports.php" title="GeneralReports"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General Reports</a>
 				</li>
 			</ul>
 		</div>
 		<!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-<!-- Navigation-->
+<!--     Navigation-->
 				<nav class="navbar navbar-green">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -117,8 +117,8 @@
 							<td><?php echo $row['Schedule_Time'];?></td>
 							<td>
 						<div class>
-									<a class="btn btn-primary" href="update class.php?edit=<?php echo $row['Class_ID']; ?>">Edit</a>
-									<a href="delete class.php?Class_ID=<?php echo $row["Class_ID"]; ?>"><button type="submit"class="btn btn-info"  onclick="return confirm('Are you sure?');" >Delete</button></a>
+									<a class="btn btn-primary" href="updateclass.php?edit=<?php echo $row['Class_ID']; ?>">Edit</a>
+									<a class="btn btn-primary" href="processclass3.php?delete=<?php echo $row["Class_ID"]; ?>" onclick="return confirm('Are you sure?');">Delete</a>
 								  </div>
 								</div>
 							</td>
@@ -130,5 +130,9 @@
 								<script src="attendace/jquery/jquery.min.js"></script>
 								<script src="attendace/bootstrap/js/bootstrap.bundle.min.js"></script>
 					        </div>
+							 <footer class="py-5 bg-dark">
+					  <div class="container">
+						<p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+					  </div>
 							   </body>
 							</html>

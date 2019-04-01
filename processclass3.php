@@ -2,7 +2,6 @@
 
 	session_start();
 	$mysqli = new mysqli('localhost', 'root', '', 'attendance') or die(mysqli($mysqli));
-	
 	$Class_ID= 0;
 	$update = false;
 	$Class_ID = '';
@@ -24,12 +23,12 @@
 
 		
 		$mysqli->query("INSERT INTO class (Section, Subject_Code, Semester, Academic_Year, Schedule_Day, Schedule_Time) VALUES('$Section', '$Subject_Code', '$Semester', '$Academic_Year', '$Schedule_Day', '$Schedule_Time')") or die($mysqli->error);
-		header("location: read class.php");
+		header("location: readclass.php");
 	}
-	if (isset($_GET['delete'])) {
+		if (isset($_GET['delete'])) {
 		$Class_ID = $_GET['delete'];
 		$mysqli->query("DELETE FROM class WHERE Class_ID=$Class_ID") or die($mysqli->error);
-		header("location: read class.php");
+		header("location: readclass.php");
 	}
 	
 	if (isset($_GET['edit'])) {
@@ -58,10 +57,8 @@
 		$Schedule_Day = $_POST['Schedule_Day'];
 		$Schedule_Time = $_POST['Schedule_Time'];
 		
-		$mysqli->query("UPDATE class SET Class_ID='$Class_ID', Section='$Section', Subject_Code='$Subject_Code', Academic_Year='$Academic_Year', Schedule_Day='$Schedule_Day', Schedule_Time='$Schedule_Time' WHERE Class_ID='$Class_ID'") or die($mysqli->error);
-		header("location: read class.php");
+		$mysqli->query("UPDATE class SET Class_ID='$Class_ID', Section='$Section', Subject_Code='$Subject_Code',Semester='$Semester', Academic_Year='$Academic_Year', Schedule_Day='$Schedule_Day', Schedule_Time='$Schedule_Time' WHERE Class_ID='$Class_ID'") or die($mysqli->error);
+		header("location: readclass.php");
 	}
-
-
 
 ?>

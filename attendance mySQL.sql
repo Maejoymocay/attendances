@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2019 at 10:39 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Mar 30, 2019 at 01:41 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,11 +32,20 @@ CREATE TABLE `class` (
   `Class_ID` int(11) NOT NULL,
   `Section` varchar(20) DEFAULT NULL,
   `Subject_Code` varchar(20) DEFAULT NULL,
-  `Semester` tinyint(4) DEFAULT NULL,
+  `Semester` varchar(20) DEFAULT NULL,
   `Academic_Year` char(9) DEFAULT NULL,
-  `Schedule_Day` varchar(10) DEFAULT NULL,
-  `Schedule_Time` varchar(10) DEFAULT NULL
+  `Schedule_Day` varchar(20) DEFAULT NULL,
+  `Schedule_Time` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `class`
+--
+
+INSERT INTO `class` (`Class_ID`, `Section`, `Subject_Code`, `Semester`, `Academic_Year`, `Schedule_Day`, `Schedule_Time`) VALUES
+(6, 'BSIT 3Ab', 'Filipino', 'First Semester', '2222', 'MWF', '2:00am-2:00pm'),
+(7, 'bse-tle', 'Filipino 11', 'Second Semester', '2009', 'lunes', '3:00'),
+(8, 'marawi', 'Filipino', 'First Semester', '2019', 'monday', '2:00am-2:00pm');
 
 -- --------------------------------------------------------
 
@@ -50,6 +61,17 @@ CREATE TABLE `student` (
   `Name_Extension` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`Student_ID`, `First_Name`, `Last_Name`, `Middle_Initial`, `Name_Extension`) VALUES
+('0909', 'RDpawn', 'Reid', 'q', 'II'),
+('11111111', 'Julie', 'Dumon', '-', 's'),
+('606888', 'Kenna Lou', 'Eseos', 'A', 'q'),
+('6676778', 'James', 'Eseos', 'y', '-'),
+('877888887', 'Rupert', 'Dumon', 'q', 'II');
+
 -- --------------------------------------------------------
 
 --
@@ -57,9 +79,22 @@ CREATE TABLE `student` (
 --
 
 CREATE TABLE `student_class` (
+  `number` int(15) NOT NULL,
   `Student_ID` varchar(20) DEFAULT NULL,
   `Class_ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_class`
+--
+
+INSERT INTO `student_class` (`number`, `Student_ID`, `Class_ID`) VALUES
+(12, '11111111', 7),
+(13, '606888', 6),
+(14, '0909', 6),
+(17, '0909', 8),
+(18, '877888887', 6),
+(19, '6676778', 6);
 
 -- --------------------------------------------------------
 
@@ -68,9 +103,19 @@ CREATE TABLE `student_class` (
 --
 
 CREATE TABLE `subject` (
-  `SUBJECT_CODE` varchar(20) NOT NULL,
-  `SUBJECT_TITLE` varchar(50) DEFAULT NULL
+  `Subject_Code` varchar(20) NOT NULL,
+  `Subject_Title` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subject`
+--
+
+INSERT INTO `subject` (`Subject_Code`, `Subject_Title`) VALUES
+('Filipino', 'History'),
+('Filipino 11', 'pinoy'),
+('IT0000', 'Programming'),
+('Math 10', 'Statistic');
 
 -- --------------------------------------------------------
 
@@ -80,8 +125,9 @@ CREATE TABLE `subject` (
 
 CREATE TABLE `take_attendance` (
   `Student_ID` varchar(20) DEFAULT NULL,
-  `Time_Stamp` varchar(15) DEFAULT NULL,
-  `Class_ID` int(11) DEFAULT NULL
+  `Class_ID` int(11) DEFAULT NULL,
+  `Time_Stamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -105,6 +151,7 @@ ALTER TABLE `student`
 -- Indexes for table `student_class`
 --
 ALTER TABLE `student_class`
+  ADD PRIMARY KEY (`number`),
   ADD KEY `Student_ID` (`Student_ID`),
   ADD KEY `Class_ID` (`Class_ID`);
 
@@ -112,7 +159,7 @@ ALTER TABLE `student_class`
 -- Indexes for table `subject`
 --
 ALTER TABLE `subject`
-  ADD PRIMARY KEY (`SUBJECT_CODE`);
+  ADD PRIMARY KEY (`Subject_Code`);
 
 --
 -- Indexes for table `take_attendance`
@@ -129,7 +176,14 @@ ALTER TABLE `take_attendance`
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `Class_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Class_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `student_class`
+--
+ALTER TABLE `student_class`
+  MODIFY `number` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- Constraints for dumped tables
 --
@@ -138,7 +192,7 @@ ALTER TABLE `class`
 -- Constraints for table `class`
 --
 ALTER TABLE `class`
-  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`Subject_Code`) REFERENCES `subject` (`SUBJECT_CODE`);
+  ADD CONSTRAINT `class_ibfk_1` FOREIGN KEY (`Subject_Code`) REFERENCES `subject` (`Subject_Code`);
 
 --
 -- Constraints for table `student_class`
@@ -153,6 +207,7 @@ ALTER TABLE `student_class`
 ALTER TABLE `take_attendance`
   ADD CONSTRAINT `take_attendance_ibfk_1` FOREIGN KEY (`Student_ID`) REFERENCES `student` (`Student_ID`),
   ADD CONSTRAINT `take_attendance_ibfk_2` FOREIGN KEY (`Class_ID`) REFERENCES `class` (`Class_ID`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
