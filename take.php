@@ -87,9 +87,16 @@
 				</nav>
              <br>
           <br>
+<<<<<<< HEAD
 		 <body>
 		<div class="table-responsive">
        <a href="student.php"class="btn btn-primary">Add Student</a>	
+=======
+     
+ <body>
+<div class="table-responsive">
+  <a href="student.php"class="btn btn-primary">Add Student</a>	
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069
 			<table class="table table-hover table-dark">
 				  <thead>
 						<tr>
@@ -119,8 +126,17 @@
 					<?php endwhile;?>
 				</table>
 				</div>
+<<<<<<< HEAD
 				<!-- Bootstrap core JavaScript -->
 				<script src="vendor/jquery/jquery.min.js"></script>
 				<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 			   </body>
 				  </html>
+=======
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+   </body>
+      </html>
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069

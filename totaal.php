@@ -21,6 +21,7 @@
 		return $filter_Result;
 	}
 ?>
+<<<<<<< HEAD
 
 <DOCTYPE html>
 <html lang="en">
@@ -87,6 +88,27 @@
 					</div>
 			    	</nav>
 					 <a href="" button type="button" class="btn btn-primary">View</a><td> <a href="takeattendances.php" button type="button" class="btn btn-primary">Back</a></td>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<br>
+			<br>
+			   <br>
+					<head>
+						<title>Student View</title>
+						<meta charset="utf-8">
+						<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+						<link rel="shortcut icon" type="image/x-icon" href="picture/attendance.jpg" />
+						<link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+						<link href="css/attendance.css" rel="stylesheet">
+						<script src="bootstrap-3.3.7/js/jquery.min.js"></script>
+						<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+						<script src="js/attendance.js"></script>
+					</head>
+					<body>
+					 <a href="" button type="button" class="btn btn-primary">View</a><td> <a href="take attendance.php" button type="button" class="btn btn-primary">Back</a></td>
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069
 					<div class ="container">
 						<table class="table">
 					  <thead>

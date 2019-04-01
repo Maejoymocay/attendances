@@ -13,6 +13,7 @@
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
+<<<<<<< HEAD
 
 <body>
 
@@ -70,6 +71,12 @@
 				</style>
 				</nav>
               <br>
+=======
+<br>
+   <br>
+     <br>
+        <br>
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069
              <body>
                 <form method="POST"action="process2.php" style="text-align: center;">
 					<td><b>Subject Code:</b><br/><input type="text"  name="Subject_Code" required></td><br/>

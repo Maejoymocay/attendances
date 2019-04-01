@@ -12,7 +12,11 @@ $sql = "SELECT * FROM subject";
 $query1 = mysqli_query($conn,$sql);
 
 ?>
+<<<<<<< HEAD
 <DOCTYPE html>
+=======
+<!DOCTYPE html>
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069
 <html lang="en">
 <head>
 	<title>Classroom Attendance</title>
@@ -26,6 +30,7 @@ $query1 = mysqli_query($conn,$sql);
 	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/attendance.js"></script>
 </head>
+<<<<<<< HEAD
 <body>
     <div id="wrapper">
 		<!-- Sidebar -->
@@ -80,6 +85,10 @@ $query1 = mysqli_query($conn,$sql);
 						background-size: cover;		   
 						}
 						</style>
+=======
+		<body>
+			 <br>
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069
 				 <br>
 				   <br>
 					  <center>        

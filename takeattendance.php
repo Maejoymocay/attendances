@@ -23,6 +23,7 @@
 		return $filter_Result;
 	}
 ?>
+<<<<<<< HEAD
 
 <DOCTYPE html>
 <html lang="en">
@@ -90,6 +91,13 @@
 					</div>
 				</nav>			
 				<br>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<br>
+			<br>
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069
 				  <br>
 			    <head>
 				<title>Student View</title>
@@ -108,7 +116,7 @@
 							<div class ="container">
 								<table class="table">
 							  <thead>
-								<tr>
+								<tr>'
 								  <th>Student_ID</th>
 								  <th>First_Name</th>
 								  <th>Last_Name</th>
@@ -138,6 +146,7 @@
 								<?php endwhile;?>
 							       </table>
 									</div>
+<<<<<<< HEAD
 									<!-- Bootstrap core JavaScript -->
 									<script src="attendance/jquery/jquery.min.js"></script>
 									<script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -162,3 +171,29 @@
 									</script>
 									 </body>
 									 </html>
+=======
+<!-- Bootstrap core JavaScript -->
+<script src="attendance/jquery/jquery.min.js"></script>
+<script src="attendance/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+	$('body').on('click','#add',function(){
+		
+		$("input[name='Attendance']:checked").each(function(){
+			var target = $(this);
+			var student = target.attr('data-student');
+			var class_id = target.attr('data-class');
+			var val = $("input[name='Attendance']:checked").val();
+			$.ajax({
+				url : "insert.php",
+				method: "POST",
+				data: {student:student,class_id:class_id,val:val},
+				success : function(data){
+					alert("Successfully Added!");
+				}
+			});
+		});
+	});
+</script>
+ </body>
+ </html>
+>>>>>>> 7d949aa2a4f1b48f6d936b0b3085e958ca390069
